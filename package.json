@@ -1,0 +1,11 @@
+{
+  "name": "taller",
+  "version": "1.0.0",
+  "description": "taller del bootcamp",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "luis C",
+  "license": "ISC"
+}
