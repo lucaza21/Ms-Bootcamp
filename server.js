@@ -24,7 +24,6 @@ app.listen(3001, () => console.log('server corriendo en peurto 3001'))
 app.use('/', indexRouter)
 
 // ****************************************************************************************
-
 // DB connection
 const mongoose = require('mongoose')
 mongoose
@@ -88,7 +87,6 @@ app.put('/api/update/:user_id/:user_role', async(req, res) => {
         res.status(201).json({'status 201 User created': {name,email,password,role}})
         //res.send(err)
     } else{
-        //console.log("Result :", doc) // false
         //res.send(doc)
         await dbs.Users
         .findByIdAndUpdate({_id: user_id}, {role: user_role}, {new: true})
@@ -109,17 +107,14 @@ app.delete('/api/user/delete/:user_id', async(req, res) => {
           res.status(204).send({status: '204 No Content'})
           //res.send(err)
       } else{
-          //console.log("Result :", doc) // false
           //res.send(doc)
           await dbs.Users.findByIdAndRemove(user_id);
           res.status(200).json({status: `Elemento con id:${user_id} eliminado`})
-  
           }
       });
   })
 
-
-// get Create User
+// get Create User *
 app.post('/api/createUser/', async (req, res) => {
       const {name, email, password, role} = req.body;
       const newUser = new dbs.Users({name, email, password, role});
