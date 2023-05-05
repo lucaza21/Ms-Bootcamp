@@ -17,8 +17,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// using dotenv
+require('dotenv').config()
 // app lsitening port
-app.listen(3001, () => console.log('server corriendo en peurto 3001'))
+app.listen(process.env.APP_PORT, () => console.log(`server corriendo en puerto ${process.env.APP_PORT}`))
 
 // routes
 app.use('/', indexRouter)
@@ -28,8 +30,8 @@ app.use('/', indexRouter)
 const mongoose = require('mongoose')
 mongoose
     .set('strictQuery', false) // only the fields that are specified in my Schema will be saved in the database
-    .connect('mongodb://localhost:27017/bootcamp')
-    .then(() => console.log('CONECTADO A BBDD bootcamp'))
+    .connect(`mongodb://${process.env.MONGO_HOST_PORT}/${process.env.MONGO_DB}`)
+    .then(() => console.log(`CONECTADO A BBDD ${process.env.MONGO_DB}`))
     .catch(error => console.error(error));
 
 //CORS
