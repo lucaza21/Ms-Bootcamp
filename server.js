@@ -28,7 +28,7 @@ require('dotenv').config()
 
 
 // routes
-app.use('/', indexRouter)
+app.use('/home', indexRouter)
 app.use('/api', apiRouter)
 
 
@@ -40,3 +40,7 @@ dbConnection();
 // app lsitening port
 app.listen(process.env.APP_PORT, () => console.log(`server corriendo en puerto ${process.env.APP_PORT}`))
 
+// default route
+app.get('*', function(req, res, next) {
+    res.redirect('/home');
+  });
