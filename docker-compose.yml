@@ -21,7 +21,7 @@ services:
       - .:/usr/src/app
 
   mongo_db:
-    image: mongo
+    image: mongo:5.0.6
     container_name: mongo_bootcamp
     ports: 
       - "27017:27017"
