@@ -64,22 +64,22 @@ http://localhost:4000/api/allUsers
 
 * Para consultar un usuario por su ID:
 ```bash
-http://localhost:4000/api/user/:user_id
+http://localhost:4000/api/user/id/<user_id>
 ```
 
 * Para consultar un usuario por su Role:
 ```bash
-http://localhost:4000/api/user/role/:user_role
+http://localhost:4000/api/user/role/<user_role>
 ```
 
 * Para actualizar el Role de un usuario:
 ```bash
-http://localhost:4000/api/update/:user_id/:user_role
+http://localhost:4000/api/update/<user_id>/<user_role>
 ```
 
 * Para eliminar un usuario:
 ```bash
-http://localhost:4000/api/user/delete/:user_id
+http://localhost:4000/api/user/delete/<user_id>
 ```
 
 * Para crear un usuario random:
