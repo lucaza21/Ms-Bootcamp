@@ -1,0 +1,32 @@
+[
+   {
+      "name": "admin",
+      "email": "admin@admin.com",
+      "password": "secret",
+      "role": "admin"
+   },
+   {
+      "name": "luis",
+      "email": "luis@upc.com",
+      "password": "secret",
+      "role": "normal"
+  },
+  {
+      "name": "diana",
+      "email": "diana@upc.com",
+      "password": "secret",
+      "role": "normal"
+   },
+   {
+       "name": "pedro",
+       "email": "pedro@upc.com",
+       "password": "secret",
+       "role": "normal"
+    },
+    {
+        "name": "andres",
+        "email": "andres@upc.com",
+        "password": "secret",
+        "role": "normal"
+     }
+ ]

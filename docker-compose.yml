@@ -1,0 +1,44 @@
+version: "3"
+
+services:
+  express:
+    container_name: express_bootcamp
+    restart: always
+    build: .
+    ports: 
+      - "4000:3001"
+    environment:
+        - APP_PORT=3001
+        - MONGO_HOST_PORT=mongo_db:27017
+        - MONGO_DB=bootcamp
+    links:
+      - mongo_db
+    depends_on:
+      - mongo_db 
+    volumes:
+      - .:/usr/src/app
+
+  mongo_db:
+    image: mongo
+    container_name: mongo_bootcamp
+    ports: 
+      - "27017:27017"
+    restart: always
+    volumes:
+      - mongo_db:/data/db
+
+  mongo-seed:
+    env_file:
+      - .env
+    build:
+        context: ./mongo_seed
+        dockerfile: Dockerfile
+        args:
+          - DATABASE_URI=$DATABASE_URI
+    depends_on:
+        - mongo_db
+
+volumes:
+  mongo_db: {}
+    
+
