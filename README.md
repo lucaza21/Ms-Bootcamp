@@ -28,6 +28,8 @@ Dado que en la actividad se pide que la app, desplegada en un Docker se comuniqu
 
 Para crear las imágenes, correr la aplicación y la Db dockerizadas sólo debe ubicarse en la raíz del proyecto y ejecutar:
 ```bash
+npm install
+
 docker-compose up -d - Detached mode: Run containers in the background
 ó
 docker-compose up - Attached mode: attach to service output
