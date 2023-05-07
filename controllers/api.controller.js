@@ -89,5 +89,11 @@ module.exports = {
           await newUser.save();
           res.status(200).json({'user': req.body});
     
+    },
+
+    // not mapped routes
+    notMapped : async (req, res) =>{
+        res.redirect('/');
     }
+    
 };

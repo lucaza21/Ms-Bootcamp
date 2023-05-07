@@ -4,7 +4,9 @@ services:
   express:
     container_name: express_bootcamp
     restart: always
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports: 
       - "4000:3001"
     environment:
