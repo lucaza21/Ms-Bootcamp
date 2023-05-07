@@ -28,8 +28,6 @@ Dado que en la actividad se pide que la app, desplegada en un Docker se comuniqu
 
 Para crear las imágenes, correr la aplicación y la Db dockerizadas sólo debe ubicarse en la raíz del proyecto y ejecutar:
 ```bash
-npm install
-
 docker-compose up -d - Detached mode: Run containers in the background
 ó
 docker-compose up - Attached mode: attach to service output
@@ -66,22 +64,22 @@ http://localhost:4000/api/allUsers
 
 * Para consultar un usuario por su ID:
 ```bash
-http://localhost:4000/api/user/:user_id
+http://localhost:4000/api/user/id/<user_id>
 ```
 
 * Para consultar un usuario por su Role:
 ```bash
-http://localhost:4000/api/user/role/:user_role
+http://localhost:4000/api/user/role/<user_role>
 ```
 
 * Para actualizar el Role de un usuario:
 ```bash
-http://localhost:4000/api/update/:user_id/:user_role
+http://localhost:4000/api/update/<user_id>/<user_role>
 ```
 
 * Para eliminar un usuario:
 ```bash
-http://localhost:4000/api/user/delete/:user_id
+http://localhost:4000/api/user/delete/<user_id>
 ```
 
 * Para crear un usuario random:
@@ -96,6 +94,5 @@ Linkedin: **[Luis Carrasquilla](https://www.linkedin.com/in/luis-carrasquilla/)*
 
 ## License
 MIT License
-
 
 
