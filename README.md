@@ -1,6 +1,6 @@
 # Bootcamp del Master en Full Stack Web Development de ThreePoints
 
-Este repositorio es una breve guía explicar el consumo de la API realizada como requisito del taller expuesto en este módulo del Master.
+El siguiente repositorio es una breve guía explicar el consumo de la API realizada como requisito del taller expuesto en este módulo del Master.
 Se pretende tener una base de nodejs y docker de acuerdo al temario impartido en el Bootcamp del Master en Full Stack Web Development de Three Points.
 
 ## Descripción de contenidos
@@ -17,18 +17,19 @@ Se pretende tener una base de nodejs y docker de acuerdo al temario impartido en
 
 Dado que en la actividad se pide que la app, desplegada en un Docker se comunique con la base de datos, también desplegada en un Docker container tenemos:
 
-* Se crea el archivo Dockerfile a nivel del proyecto para crear la imágen de node - nuestro proyecto
-* Se crea el archivo Dockerfile en /mongo_seed para crear la imágen de mongo y popular la db.
-* Se crea el archivo docker-compose.yml para definir los servicios:
-    - express : servicios de node
-    - mongo_db : servicios DB
-    - seed-seed : servicios para popular la DB creada
+* Se crea el archivo **Dockerfile** a nivel del proyecto para crear la imágen de node - nuestro proyecto
+* Se crea el archivo **Dockerfile** en /mongo_seed para crear la imágen de mongo y popular la db.
+* Se crea el archivo **docker-compose.yml** para definir los servicios:
+    - **express** : servicios de node
+    - **mongo_db** : servicios DB
+    - **seed-seed** : servicios para popular la DB creada
     
-    **todos los servicios presentan la creación de volúmenes en docker para tener persistencia de datos a nivel de app y db.**
+    **Todos los servicios presentan la creación de volúmenes en docker para tener persistencia de datos a nivel de app y db.**
 
-Para crear las imágenes y correr la aplicación y l Db dockerizadas sólo debe ubicarse en la raíz del proyecto y ejecutar:
+Para crear las imágenes, correr la aplicación y la Db dockerizadas sólo debe ubicarse en la raíz del proyecto y ejecutar:
 ```bash
 docker-compose up -d - Detached mode: Run containers in the background
+ó
 docker-compose up - Attached mode: attach to service output
 ```
 
@@ -37,8 +38,8 @@ Para bajar los servicios y el contenedor, ejecute:
 docker-compose down
 ```
 
-Luego de correr el proyecto por primera vez, puede comentar las líneas de la 32 a la 41 con un '#' en el docker-compose.yml.
-esto con el fin de que la proxima vez que suba los servicios, no vuelva a popular la DB con el archivo users.json
+Luego de correr el proyecto por primera vez, puede comentar las líneas de la 32 a la 41 con un '#' en el **docker-compose.yml**.
+Esto con el fin de que la proxima vez que suba los servicios, no vuelva a popular la DB con el archivo users.json
 ```bash
 #mongo-seed:
 #    env_file:
@@ -76,7 +77,7 @@ http://localhost:4000/api/user/role/:user_role
 http://localhost:4000/api/update/:user_id/:user_role
 ```
 
-* Para aliminar un usuario:
+* Para eliminar un usuario:
 ```bash
 http://localhost:4000/api/user/delete/:user_id
 ```
