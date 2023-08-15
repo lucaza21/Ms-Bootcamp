@@ -40,7 +40,12 @@ Para bajar los servicios y el contenedor, ejecute:
 docker-compose down
 ```
 
-Luego de correr el proyecto por primera vez, puede comentar las líneas de la 32 a la 41 con un '#' en el **docker-compose.yml**.
+Para correr el servidor, ejecute:
+```bash
+node .\server.js
+```
+
+Finalmente de correr el proyecto por primera vez, puede comentar las líneas de la 32 a la 41 con un '#' en el **docker-compose.yml**.
 Esto con el fin de que la proxima vez que suba los servicios, no vuelva a popular la DB con el archivo users.json
 ```bash
 #mongo-seed:
